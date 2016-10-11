@@ -168,26 +168,26 @@ gitlab_rails['omniauth_block_auto_created_users'] = true
 # gitlab_rails['omniauth_auto_link_saml_user'] = false
 # gitlab_rails['omniauth_external_providers'] = ['twitter', 'google_oauth2']
 # gitlab_rails['omniauth_providers'] = [
-   {
-     "name" => "cas",
-     "app_id" => "YOUR APP ID",
-     "app_secret" => "YOUR APP SECRET",
-     "args" => { "access_type" => "offline", "approval_prompt" => "" }
-   }
+#  {
+#    "name" => "cas",
+#    "app_id" => "YOUR APP ID",
+#    "app_secret" => "YOUR APP SECRET",
+#    "args" => { "access_type" => "offline", "approval_prompt" => "" }
+#  }
 # ]
 
-#gitlab_rails['omniauth_providers'] = [
-# {
-#   "name"=> "cas3",
-#   "label"=> "cas",
-#   "args"=> {
-#       "url"=> "https://cas.op-bit.nz:8443/",
-#       "login_url"=> 'cas/login',
-#       "service_validate_url"=> 'cas/p3/serviceValidate',
-#       "logout_url"=> 'cas/logout'
-#      }
-#   }
-#]
+gitlab_rails['omniauth_providers'] = [
+ {
+   "name"=> "cas3",
+   "label"=> "cas",
+   "args"=> {
+      "url"=> "https://cas.op-bit.nz:8443/",
+      "login_url"=> 'cas/login',
+      "service_validate_url"=> 'cas/p3/serviceValidate',
+      "logout_url"=> 'cas/logout'
+   }
+ }
+]
 
 #
 # If you setup bitbucket importer under omniauth providers you will need to add the keys
@@ -668,20 +668,20 @@ gitlab_rails['omniauth_block_auto_created_users'] = true
 # mattermost['log_file_level'] = 'INFO'
 # mattermost['log_file_format'] = nil
 
-#mattermost['gitlab_enable'] = true
-#mattermost['gitlab_secret'] = "afaa6fde0e4d4806d46a18b74b5ab80a4d38d3429e9d1fe6b86b59c714ebb923"
-#mattermost['gitlab_id'] = "189076a3cc3ae798f97efdeb0d92e2bac963e64999bad425d2360e1016d72fb4"
-#mattermost['gitlab_scope'] = ""
-#mattermost['gitlab_auth_endpoint'] = "http://gitlab.op-bit.nz/oauth/authorize"
-#mattermost['gitlab_token_endpoint'] = "http://gitlab.op-bit.nz/oauth/token"
-#mattermost['gitlab_user_api_endpoint'] = "http://gitlab.op-bit.nz/api/v3/user"
+# mattermost['gitlab_enable'] = true
+# mattermost['gitlab_secret'] = "afaa6fde0e4d4806d46a18b74b5ab80a4d38d3429e9d1fe6b86b59c714ebb923"
+# mattermost['gitlab_id'] = "189076a3cc3ae798f97efdeb0d92e2bac963e64999bad425d2360e1016d72fb4"
+# mattermost['gitlab_scope'] = ""
+# mattermost['gitlab_auth_endpoint'] = "http://gitlab.op-bit.nz/oauth/authorize"
+# mattermost['gitlab_token_endpoint'] = "http://gitlab.op-bit.nz/oauth/token"
+# mattermost['gitlab_user_api_endpoint'] = "http://gitlab.op-bit.nz/api/v3/user"
 
 #Shut down Gitlab services on the mattermost server
-#gitlab_rails['enable'] = false
+# gitlab_rails['enable'] = false
 
 # mattermost['aws'] = {'S3AccessKeyId' => '123', 'S3SecretAccessKey' => '123', 'S3Bucket' => 'aa', 'S3Region' => 'bb'}
 
-#mattermost['email_enable_sign_up_with_email'] = false
+# mattermost['email_enable_sign_up_with_email'] = false
 # mattermost['email_enable_sign_in_with_email'] = true
 # mattermost['email_enable_sign_in_with_username'] = false
 # mattermost['email_send_email_notifications'] = false
