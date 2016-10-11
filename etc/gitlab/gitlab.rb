@@ -44,7 +44,7 @@ external_url 'http://gitlab.op-bit.nz'
 # gitlab_rails['ldap_sync_worker_cron'] = "30 1 * * *"
 # gitlab_rails['geo_bulk_notify_worker_cron'] = "*/10 * * * * *"
 # gitlab_rails['webhook_timeout'] = 10
-# gitlab_rails['trusted_proxies'] = [] 
+# gitlab_rails['trusted_proxies'] = []
 
 ## Reply by email
 # Allow users to comment on issues and merge requests by replying to notification emails.
@@ -160,21 +160,35 @@ external_url 'http://gitlab.op-bit.nz'
 ## For setting up omniauth
 ## see https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md#omniauth-google-twitter-github-login
 
-# gitlab_rails['omniauth_enabled'] = false
-# gitlab_rails['omniauth_allow_single_sign_on'] = ['saml']
-# gitlab_rails['omniauth_auto_sign_in_with_provider'] = 'saml'
-# gitlab_rails['omniauth_block_auto_created_users'] = true
+gitlab_rails['omniauth_enabled'] = true
+gitlab_rails['omniauth_allow_single_sign_on'] = ['cas3']
+gitlab_rails['omniauth_auto_sign_in_with_provider'] = 'cas3'
+gitlab_rails['omniauth_block_auto_created_users'] = true
 # gitlab_rails['omniauth_auto_link_ldap_user'] = false
 # gitlab_rails['omniauth_auto_link_saml_user'] = false
 # gitlab_rails['omniauth_external_providers'] = ['twitter', 'google_oauth2']
 # gitlab_rails['omniauth_providers'] = [
-#   {
-#     "name" => "google_oauth2",
-#     "app_id" => "YOUR APP ID",
-#     "app_secret" => "YOUR APP SECRET",
-#     "args" => { "access_type" => "offline", "approval_prompt" => "" }
-#   }
+   {
+     "name" => "cas",
+     "app_id" => "YOUR APP ID",
+     "app_secret" => "YOUR APP SECRET",
+     "args" => { "access_type" => "offline", "approval_prompt" => "" }
+   }
 # ]
+
+#gitlab_rails['omniauth_providers'] = [
+# {
+#   "name"=> "cas3",
+#   "label"=> "cas",
+#   "args"=> {
+#       "url"=> "https://cas.op-bit.nz:8443/",
+#       "login_url"=> 'cas/login',
+#       "service_validate_url"=> 'cas/p3/serviceValidate',
+#       "logout_url"=> 'cas/logout'
+#      }
+#   }
+#]
+
 #
 # If you setup bitbucket importer under omniauth providers you will need to add the keys
 # which will allow connection between bitbucket and gitlab.
@@ -594,7 +608,7 @@ external_url 'http://gitlab.op-bit.nz'
 # GitLab Mattermost #
 #####################
 
-mattermost_external_url 'http://mattermost.op-bit.nz'
+# mattermost_external_url 'http://mattermost.op-bit.nz'
 #
 # mattermost['enable'] = false
 # mattermost['username'] = 'mattermost'
